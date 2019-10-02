@@ -1,0 +1,12 @@
+class  dataType
+{
+	public static void main(String[] args) 
+	{
+		byte a = (int)128;
+		double b;
+		b = a;
+		
+		System.out.println(a);
+		System.out.println(b);
+	}
+}

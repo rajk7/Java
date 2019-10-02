@@ -1,0 +1,56 @@
+/* output
+Tommy
+Black
+5000
+Jimmy
+White
+3000
+*/
+class Dog
+{
+	private String name;
+	private String color;
+	private int cost;
+	Dog (String name, String color, int cost)
+	{
+		this();// this() will run first all of th inside this() 
+		this.name = name; 
+		this.color = color;
+		this.cost = cost;
+	}
+
+	Dog ()
+	{
+		name = "Tommy";
+		color = "Black";
+		cost = 5000;
+	}
+	String getName()
+	{
+		return name;
+	}
+	String getColor()
+	{
+		return color;
+	}
+	int getCost()
+	{
+		return cost;
+	}
+}
+
+class lounchDog8
+{
+	public static void main(String[] args) 
+	{
+		Dog d1 = new Dog();
+		System.out.println(d1.getName()); //tommy
+		System.out.println(d1.getColor());//Black
+		System.out.println(d1.getCost());//5000
+
+		Dog d2 = new Dog("Jimmy","White",3000);
+		System.out.println(d2.getName()); //Jimmy
+		System.out.println(d2.getColor());//White
+		System.out.println(d2.getCost());//3000
+	}
+}

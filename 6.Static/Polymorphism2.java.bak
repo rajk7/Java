@@ -1,0 +1,89 @@
+class plane
+{
+	void takeoff()
+	{
+		System.out.println("plane is taking off");
+	}
+	void fly()
+	{
+		System.out.println("plane is flying");
+	}
+	void land()
+	{
+		System.out.println("plane is landing");
+	}
+}
+
+class cargo extends plane
+{
+	void takeoff()
+	{
+		System.out.println("cargoplane is taking off");
+	}
+	void fly()
+	{
+		System.out.println("cargoplane is flying");
+	}
+	void land()
+	{
+		System.out.println("cargoplane is landing");
+	}
+}
+
+class passenger extends plane
+{
+	void takeoff()
+	{
+		System.out.println("passengerplane is taking off");
+	}
+	void fly()
+	{
+		System.out.println("passengerplane is flying");
+	}
+	void land()
+	{
+		System.out.println("passenger plane is landing");
+	}
+}
+
+class fighter extends plane
+{
+	void takeoff()
+	{
+		System.out.println("fighterplane is taking off");
+	}
+	void fly()
+	{
+		System.out.println("fighterplane is flying");
+	}
+	void land()
+	{
+		System.out.println("fighterplane is landing");
+	}
+}
+class airport
+{
+	void permit(plane ref)
+	{
+		ref.takeoff();
+		ref.fly();
+		ref.land();
+	}
+}
+
+class Polymorphism2
+{
+	public static void main(String[] args) 
+	{
+		cargo cp = new cargo();
+		passenger pp = new passenger();
+		fighter fp = new fighter();
+		airport p = new airport();
+		p.permit(cp);
+		System.out.println("*************************");
+		p.permit(pp);
+		System.out.println("*************************");
+		p.permit(fp);
+		
+	}
+}

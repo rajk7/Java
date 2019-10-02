@@ -1,0 +1,29 @@
+class Books
+{
+	private int pg_no;
+	void setData (int x)  // setter
+	{
+		if (x>0)
+		{
+			pg_no = x;
+		}
+		else
+		{
+			System.out.println("invalid input");
+			System.exit(0);
+		}
+	}
+	int getData()        // getter
+	{
+		return pg_no;
+	}
+}
+class String2 
+{
+	public static void main(String[] args) 
+	{
+		Books b = new Books();
+		b.setData(100);
+		System.out.println(b.getData());
+	}
+}

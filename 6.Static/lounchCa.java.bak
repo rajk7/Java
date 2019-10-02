@@ -1,0 +1,26 @@
+//return type doesn't method Overloading 
+class lounchCal 
+{
+	public static void main(String[] args) 
+	{
+		calculator calc = new calculator();
+		calc.add(10,20.5f);
+		System.out.println("Hello World!");
+	}
+}
+
+class calculator
+{
+	void add (int x, float y)
+	{
+		float temp = x+y;
+		System.out.println(temp);
+	}
+	float add (int x, float y)
+	{
+		return x+y;
+	}
+}  /* Error both consist of add(int and float) 
+   so there will have only one add(int and float)
+   inside constructor there will only one add(int and float)
+   */ 

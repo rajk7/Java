@@ -1,0 +1,55 @@
+/* output-
+chile1 is crying in low voice
+child2 is cryiing in medium voice
+child3 s crying in heigh voice
+*/
+class parent
+{
+	void cry()
+	{
+		System.out.println("parent is crying");
+	}
+}
+class child1 extends parent
+{
+	void cry()
+	{
+		System.out.println("chile1 is crying in low voice");
+	}
+}
+class child2 extends parent
+{
+	void cry()
+	{
+		System.out.println("child2 is cryiing in medium voice");
+	}
+}
+class child3 extends parent
+{
+	void cry()
+	{
+		System.out.println("child3 s crying in heigh voice");
+	}
+}
+
+class Polymorphism1 
+{
+	public static void main(String[] args) 
+	{
+		child1 c1 = new child1();
+		child2 c2 =new child2();
+		child3 c3 =new child3();
+
+		parent ref;
+
+		ref = c1;//RTS
+		ref.cry();//
+
+		ref = c2;
+		ref.cry();
+
+		ref = c3;
+		ref.cry();
+
+	}
+}
