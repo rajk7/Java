@@ -1,0 +1,98 @@
+import java.util.Scanner;
+interface calculator
+{
+	void mul();
+	void div();
+}
+class Mycalculator1 implements calculator
+{
+	public void mul()
+	{
+		int a=20;
+		int b=10;
+		int c=a*b;
+		System.out.println(c);
+	}
+	public void div()
+	{
+		int a=200;
+		int b=10;
+		int c=a/b;
+		System.out.println(c);
+	}
+}
+class Mycalculator2 implements calculator
+{
+	public void mul()
+	{
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the values for mul");
+		int a = scan.nextInt();
+		int b = scan.nextInt();
+		int c = a*b;
+		System.out.println(c);
+
+	}
+	public void div()
+	{
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the values for div");
+		int a = scan.nextInt();
+		int b = scan.nextInt();
+		int c = a/b;
+		System.out.println(c);
+	}
+}
+class Mycalculator3 implements calculator
+{
+	public void mul()
+	{
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the values for mul");
+		int a = scan.nextInt();
+		int b = scan.nextInt();
+		if(a==0||b==0)
+		System.out.println("Enter value is not valid");
+		else
+		{
+		int c = a*b;
+		System.out.println(c);
+		}
+
+	}
+	public void div()
+	{
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the values for div");
+		int a = scan.nextInt();
+		int b = scan.nextInt();
+		if(a==0||b==0)
+		System.out.println("Enter value is not valid");
+		else
+		{
+		int c = a/b;
+		System.out.println(c);
+		}
+	}
+}
+class Refmaths
+{
+	void permit(calculator ref)
+	{
+		ref.mul();
+		ref.div();
+	}
+}
+class  Interface
+{
+	public static void main(String[] args) 
+	{
+		Mycalculator1 mc1 = new Mycalculator1();
+		Mycalculator2 mc2 = new Mycalculator2();
+		Mycalculator3 mc3 = new Mycalculator3();
+		Refmaths r = new Refmaths();
+		r.permit(mc1);
+		r.permit(mc2);
+		r.permit(mc3);
+	}
+}

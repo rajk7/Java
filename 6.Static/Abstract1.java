@@ -1,0 +1,78 @@
+import java.util.Scanner;
+abstract class Shapes
+{
+	float area;
+	abstract void input();
+	abstract void compute();
+	void disp()
+	{
+		System.out.println(area);
+	}
+}
+class Square extends Shapes
+{
+	float length;
+	void input()
+	{
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter length");
+		length = scan.nextFloat();
+	}
+	void compute()
+	{
+		area = length*length;
+	}
+}
+class Rectangles extends Shapes
+{
+	float length;
+	float breath;
+	void input()
+	{
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter length");
+		length = scan.nextFloat();
+		System.out.println("Enter breath");
+		breath = scan.nextFloat();
+	}
+	void compute()
+	{
+		area = length*breath;
+	}
+}
+class Circle extends Shapes
+{
+	float radias;
+	void input()
+	{
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter radius");
+		radias = scan.nextFloat();
+	}
+	void compute()
+	{
+		area = 3.14f*radias*radias;
+	}
+}
+class Maths
+{
+	void permit(Shapes ref)
+	{
+		ref.input();
+		ref.compute();
+		ref.disp();
+	}
+}
+class  Abstract1
+{
+	public static void main(String[] args) 
+	{
+		Square s = new Square();
+		Rectangles r = new Rectangles();
+		Circle c = new Circle();
+		Maths m =new Maths();
+		m.permit(s);
+		m.permit(r);
+		m.permit(c);
+	}
+}

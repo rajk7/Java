@@ -1,0 +1,25 @@
+import java.util.*;
+import java.io.*;
+import java.net.*;
+class Server  
+{
+	public static void main(String[] args) throws Exception
+	{
+		ServerSocket listenes = new ServerSocket(4000);
+		System.out.println("server is ready to listen");
+		Socket ssoc = listenes.accept();
+		InputStream is = ssoc.getInputStream();
+		DataInputStream dis = new DataInputStream(is);
+		OutputStream os = ssoc.getOutputStream();// change to ssoc
+		DataOutputStream dos = new DataOutputStream(os);
+		Scanner scan = new Scanner(System.in);
+		for (int i=0; i<=10; i++)
+		{
+			String msg = dis.readUTF();
+			System.out.println(msg);
+			String reply = scan.nextLine();
+			dos.writeUTF(reply);
+		}
+		
+	}
+}

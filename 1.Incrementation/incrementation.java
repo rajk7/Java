@@ -4,7 +4,7 @@ class incrementation
 	{
 		int a =10;
 		int b;
-		a++;
+		a--;
 		b=a;
 		System.out.println(a);
 		System.out.println(b);

@@ -1,0 +1,63 @@
+abstract class Bird
+{
+	abstract void eat();
+	abstract void fly();
+}
+
+abstract class Eagle extends Bird
+{
+	abstract void eat();
+	void fly()
+	{
+		System.out.println("eagle fly at high level");
+	}
+}
+class Goldeneagle extends Eagle
+{
+	void eat()
+	{
+		System.out.println("Golden Eagle eats sea food");
+	}
+}
+class Serpanteagle extends Eagle
+{
+	void eat()
+	{
+		System.out.println("Serpant Eagle eats sea food");
+	}
+}
+
+class Sparrow extends Bird
+{
+	void eat()
+	{
+		System.out.println("Serpant Eagle eats sea food");
+	}
+	void fly()
+	{
+		System.out.println("Serpant Eagle eats sea food");
+	}
+}
+class Birdref
+{
+	void permit(Bird ref)
+	{
+		ref.eat();
+		ref.fly();
+	}
+}
+class Abstract2 
+{
+	public static void main(String[] args) 
+	{
+		Goldeneagle ge = new Goldeneagle();
+		Serpanteagle se = new Serpanteagle();
+		Sparrow s = new Sparrow();
+		Birdref bf = new Birdref();
+		bf.permit(ge);
+		System.out.println("--------------------------");
+		bf.permit(se);
+		System.out.println("------------------------------");
+		bf.permit(s);
+	}
+}

@@ -19,7 +19,7 @@ class array3DJ
 			{
 				for (int k=0; k<=a[i][j].length-1; k++)
 				{
-			System.out.println("Enter school "+i+" class "+j+" student "+k+);
+			System.out.println("Enter school "+i+" class "+j+" student "+k);
 			a[i][j][k] = scan.nextInt();
 				}
 			}
